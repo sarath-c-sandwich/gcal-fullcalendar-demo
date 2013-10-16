@@ -1,0 +1,25 @@
+= link_to 'New Event', new_event_path, class:"pull-right btn btn-primary col-lg-2"
+
+%h1 Listing events
+
+%table.table.table-striped.table-bordered
+  %tr.danger
+    %th Title
+    %th Body
+    %th Start at
+    %th End at
+    %th
+    %th
+    %th
+
+  - @events.each do |event|
+    %tr
+      %td= event.title
+      %td= event.body
+      %td= event.start
+      %td= event.end
+      %td= link_to 'Show', event
+      %td= link_to 'Edit', edit_event_path(event)
+      %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br

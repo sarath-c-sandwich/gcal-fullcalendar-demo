@@ -1,0 +1,30 @@
+%div.calendar-wrapper
+  %div#calendar
+    %div#dialog
+      = render "form"
+      :javascript
+        // defined instance of the dialog
+        $( "#dialog" ).dialog( { 
+            autoOpen: false, 
+            title: "Input Holiday"
+            });
+
+        // user click, then dialog popup
+        $('#calendar').fullCalendar({
+            header: {
+              right: "prev,next, today",
+              center: "title",
+              left: "month,agendaWeek,agendaDay"
+            },
+            events: {
+              url: 'https://www.google.com/calendar/feeds/en.cambodian%23holiday%40group.v.calendar.google.com/public/basic'
+            },
+            eventSources: [{
+              url: "/posts",
+            }],
+            dayClick: function() {
+              $('#dialog').dialog("open");
+            },
+            theme: true,
+            height: 600,
+        });

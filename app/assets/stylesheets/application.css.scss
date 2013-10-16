@@ -1,0 +1,58 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require fullcalendar
+ *= require_self
+ *= require_tree .
+ *= require jquery.ui.all
+ */
+
+@import "twitter/bootstrap";
+
+
+body {
+/*  padding-top: 30px;*/
+  background-image: image-url("bg.jpg");
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.fc-day-header {
+  padding: 10px 0px !important;
+  background: #f1f1f1;
+}
+.calendar-wrapper {
+  background: #fff;
+  -webkit-box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+#calendar {
+  padding: 20px 20px;
+}
+a.btn-primary {
+  color: #fff !important;
+}
+/*
+.navbar-default {
+  z-index: 0 !important;
+}
+
+.fc-day {
+   background: #E1EEFC;
+}
+.fc-sun {
+  background: #D6B4B4;
+}
+.fc-sat {
+  background: #eee;
+}*/
