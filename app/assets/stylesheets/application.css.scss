@@ -57,3 +57,21 @@ a.btn-primary {
 .fc-sat {
   background: #eee;
 }*/
+a.fc-event {
+  color: #666;
+  border: 1px solid #face0e;
+  background-color: #fd0;
+}
+a:hover.fc-event, 
+a:hover.fc-event span{
+  color: #000;
+  background-color: #fd0;
+  text-decoration: none;
+}
+.navbar {
+  border-bottom: 1px solid #c2a800;
+  background-color: #face0e;
+}
+.navbar a {
+  color:#000 !important;
+}

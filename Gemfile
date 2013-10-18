@@ -32,6 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem "better_errors"
+end
+
 gem "haml-rails", "~> 0.4"
 
 gem "ckeditor"
@@ -51,6 +55,9 @@ gem "calendar_helper", "~> 0.2.6"
 gem "font-awesome-rails"
 
 gem "business_time"
+
+gem "binding_of_caller"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
