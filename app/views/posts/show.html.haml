@@ -1,18 +1,19 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @post.title
-%p
-  %b Body:
-  = @post.body
-%p
-  %b Start date:
-  = @post.start
-%p
-  %b End date:
-  = @post.end
+%div.btn-group.col-md-12
+  = link_to 'Back', posts_path, class:"btn btn-primary"
+  = link_to 'Edit', edit_post_path(@post), class:"btn btn-primary"
 
-= link_to 'Edit', edit_post_path(@post)
-\|
-= link_to 'Back', posts_path
+%div.col-md-12.well
+  %p
+    %b Title:
+    = @post.title
+  %p
+    %b Body:
+    = @post.body
+  %p
+    %b Start date:
+    = @post.start
+  %p
+    %b End date:
+    = @post.end

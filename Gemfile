@@ -48,6 +48,10 @@ gem 'jquery-ui-rails'
 
 gem "calendar_helper", "~> 0.2.6"
 
+gem "font-awesome-rails"
+
+gem "business_time"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
