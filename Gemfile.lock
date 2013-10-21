@@ -68,6 +68,7 @@ GEM
       railties (>= 3.1, < 4.1)
     hike (1.2.3)
     i18n (0.6.5)
+    ice_cube (0.11.0)
     jbuilder (1.5.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -155,6 +156,7 @@ DEPENDENCIES
   font-awesome-rails
   fullcalendar-rails
   haml-rails (~> 0.4)
+  ice_cube
   jbuilder (~> 1.2)
   jquery-rails
   jquery-ui-rails

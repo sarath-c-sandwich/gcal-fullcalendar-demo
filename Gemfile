@@ -58,7 +58,7 @@ gem "business_time"
 
 gem "binding_of_caller"
 
-
+gem "ice_cube"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
