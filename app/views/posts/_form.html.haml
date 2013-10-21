@@ -16,7 +16,7 @@
     .field.form-group
       = f.input :end, :input_html => { class:"datepicker form-control", :dateformat => "mm-dd-yy" }, placeholder:"select end date", :as => :string, required: true
     .actions.form-group
-      = f.button :submit, 'save', class:"btn btn-primary btn-block"
+      = f.button :submit, 'save', class:"btn btn-success btn-block"
 
       :javascript
           $('.datepicker').datepicker({ 
