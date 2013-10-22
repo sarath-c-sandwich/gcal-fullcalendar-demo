@@ -1,4 +1,6 @@
 Calendar::Application.routes.draw do
+  resources :companies
+
   resources :events
 
   root "posts#index"

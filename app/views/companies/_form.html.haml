@@ -1,0 +1,8 @@
+= simple_form_for(@company) do |f|
+  %div
+    = f.error_notification
+  .form-inputs.form-group
+    = f.input :name,:input_html => { :rows => 10, :class => "form-control" }, placeholder:"fill in company name", required: true
+    = f.input :description, :value => "Default value", :id => "sometext",:input_html => { :rows => 10, :class => "form-control" }, placeholder:"company description", required: true
+  .form-actions.form-group
+    = f.button :submit, class:"btn btn-success"

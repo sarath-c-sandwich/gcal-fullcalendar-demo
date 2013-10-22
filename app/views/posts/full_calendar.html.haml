@@ -1,5 +1,5 @@
 %div
-  -# = Rule.yearly(4).month_of_year(:november).day(:tuesday).day_of_month(2, 3, 4, 5, 6, 7, 8)
+  
 %div.calendar-wrapper
   %div#calendar
     %div#modal.modal.fade{:hidden=>true}
@@ -10,7 +10,8 @@
             %h4.modal-title Input Event
           %div.modal-body
             = render "form"
-    :javascript
+:javascript
+
       // defined instance of the dialog
       // $( "#dialog" ).dialog( { 
       //     autoOpen: false, 
@@ -23,11 +24,13 @@
             center: "title",
             left: "month,agendaWeek,agendaDay"
           },
+          selectable: true,
+          editable: true,
           events: {
             url: 'https://www.google.com/calendar/feeds/en.cambodian%23holiday%40group.v.calendar.google.com/public/basic'
           },
           eventSources: [{
-            url: "/posts",
+            url: "/full_calendar",
           }],
           dayClick: function() {
             $('#modal').modal({

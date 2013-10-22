@@ -1,0 +1,13 @@
+%div
+= link_to 'New Company', new_company_path, class:"btn btn-success pull-right"
+%h1 Listing companies
+%div
+- @companies.each do |company|
+    %h3= company.name
+    %div= company.description
+    %div.well
+        = link_to 'Show', company, class:"btn btn-link"
+        = link_to 'Edit', edit_company_path(company), class:"btn btn-link"
+        = link_to 'Destroy', company, :method => :delete, :data => { :confirm => 'Are you sure?' }, class:"btn btn-link"
+
+%br

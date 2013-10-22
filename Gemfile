@@ -36,6 +36,8 @@ group :development do
   gem "better_errors"
 end
 
+gem 'jquery-turbolinks'
+
 gem "haml-rails", "~> 0.4"
 
 gem "ckeditor"
