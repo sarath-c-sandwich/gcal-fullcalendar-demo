@@ -1,15 +1,59 @@
-%div
-  
-%div.calendar-wrapper
-  %div#calendar
-    %div#modal.modal.fade{:hidden=>true}
-      %div.modal-dialog
-        %div.modal-content
-          %div.modal-header
-            %button.close{"data-dismiss" => "modal", "aria-hidden" => true} &times;
-            %h4.modal-title Input Event
-          %div.modal-body
-            = render "form"
+= @wow.inspect
+%div#calendar-modal.modal.fade{:hidden=>true}
+  %div.modal-dialog
+    %div.modal-content
+      %div.modal-header
+        %button.close{"data-dismiss" => "modal", "aria-hidden" => true} &times;
+        %h4.modal-title 
+          %strong Configure Opening Hours 
+      %div.modal-body
+        %h5 Please configure your business hours
+        = render "open_hour_form"
+
+      %div.modal-footer
+        %button.btn.btn-success Save change
+
+%div.col-md-3
+  %div.well
+    %button#working-hour.btn.btn-primary.btn-block
+      Configure Opening Hours
+    %div.space
+    %h4 Open Hours
+    %table
+      %tr.space
+        %td 
+          %strong Monday
+        %td 08:00AM-11:30PM
+      %tr.space
+        %td
+        %td 01:00PM-05:00PM
+      %tr
+        %td 
+          %strong Tuesday
+        %td Closed
+      %tr
+        %td
+        %td 01:00PM-05:00PM
+      %tr
+        %td 
+          %strong Wednesday
+        %td 08:00AM-11:30PM
+      %tr
+        %td
+        %td 01:00PM-05:00PM
+
+
+%div.col-md-9
+  %div.calendar-wrapper
+    %div#calendar
+      %div#modal.modal.fade{:hidden=>true}
+        %div.modal-dialog
+          %div.modal-content
+            %div.modal-header
+              %button.close{"data-dismiss" => "modal", "aria-hidden" => true} &times;
+              %h4.modal-title Create New Event
+            %div.modal-body
+              = render "form"
 :javascript
 
       // defined instance of the dialog
@@ -17,24 +61,47 @@
       //     autoOpen: false, 
       //     title: "Input Holiday"
       //     });
-      // user click, then dialog popup
-      $('#calendar').fullCalendar({
+      // user click, the
+      var calendar = $('#calendar').fullCalendar({
           header: {
             right: "prev,next, today",
             center: "title",
             left: "month,agendaWeek,agendaDay"
           },
+
+          selectHelper: true,
           selectable: true,
           editable: true,
           events: {
             url: 'https://www.google.com/calendar/feeds/en.cambodian%23holiday%40group.v.calendar.google.com/public/basic'
           },
+          select: function(start, end, allDay) {
+            $('#modal').modal();
+            /* if title is enterd calendar will add title and event into fullCalendar.*/
+            if (title) {
+              calendar.fullCalendar('renderEvent',
+                {
+                  title: title,
+                  start: start,
+                  end: end,
+                  allDay: allDay
+                },
+              true // make the event "stick"
+            );
+            }
+            calendar.fullCalendar('unselect');
+          },
           eventSources: [{
             url: "/full_calendar",
+            allDay: true
           }],
           dayClick: function() {
             $('#modal').modal({
             });
           },
           height: 600,
+      });
+
+      $("#working-hour").click(function() {
+        $("#calendar-modal").modal();
       });

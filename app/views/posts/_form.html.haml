@@ -10,7 +10,7 @@
     .field.form-group
       = f.input :title, required:true
     .field.form-group
-      = f.input :body, :value => "Default value", :id => "sometext",:input_html => { :rows => 10 }, required: true
+      = f.input :body, :value => "Default value", :id => "sometext",:input_html => { :rows => 5 }, required: true
     .field.form-group
       = f.input :start, :input_html => { class:"datepicker form-control" }, placeholder:"select start date", :as => :string, :dateFormat => "mm-dd-yy", required:true
     .field.form-group

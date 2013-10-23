@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-      @posts = Post.all   
+      @posts = Post.all
   end
 
   # GET /posts/1
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def full_calendar
-
+    @wow = Schedule.first
     if params[:start] and params[:end]
       start_time = Time.at(params[:start].to_i).to_datetime
       end_time = Time.at(params[:end].to_i).to_datetime

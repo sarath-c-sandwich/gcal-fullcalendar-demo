@@ -20,3 +20,4 @@
 //= require fullcalendar
 //= require gcal
 //= require jquery.ui.all
+//= require bootstrap-datetimepicker

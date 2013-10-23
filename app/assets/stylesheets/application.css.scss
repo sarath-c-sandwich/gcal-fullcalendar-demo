@@ -12,8 +12,10 @@
  *= require_self
  *= require_tree .
  *= require jquery.ui.all
+ *= require bootstrap-datetimepicker
  */
 
+@import 'bootstrap-datetimepicker';
 @import "twitter/bootstrap";
 @import "font-awesome";
 
@@ -74,4 +76,16 @@ a:hover.fc-event span{
 }
 .navbar a {
   color:#000 !important;
+}
+.clear {
+  clear:both;
+}
+.space {
+  padding: 20px;
+}
+.half-width {
+  width: 200px;
+}
+.float-left {
+  float: left;
 }

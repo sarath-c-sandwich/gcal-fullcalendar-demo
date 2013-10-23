@@ -35,6 +35,7 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-datetimepicker-rails (0.0.11)
     builder (3.1.4)
     business_time (0.6.2)
       activesupport (>= 3.1.0)
@@ -151,6 +152,7 @@ DEPENDENCIES
   anjlab-bootstrap-rails (~> 3.0.0.3)
   better_errors
   binding_of_caller
+  bootstrap-datetimepicker-rails
   business_time
   calendar_date_select
   calendar_helper (~> 0.2.6)

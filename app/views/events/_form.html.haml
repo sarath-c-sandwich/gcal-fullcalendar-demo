@@ -1,18 +1,22 @@
-= simple_form_for(@event) do |f|
-  -# = f.error_notification
 
+= simple_form_for(@event) do |f|
+  = f.error_notification
   .field.form-group
     = f.input :title
     = f.input :body, :input_html => { :rows => 10 }
     = f.input :start, :input_html => { class:"datepicker form-control" },
-            :as => :string, :dateFormat => "mm-dd-yy"
-    = f.input :end, :input_html => { class:"datepicker form-control" },
-            :as => :string, :dateFormat => "mm-dd-yy"
+          :as => :string, :dateFormat => "mm-dd-yy"
+    = f.input :end, :input_html => { class:"timepicker form-control" },
+          :as => :string
 
   .form-actions.form-group
     = f.button :submit, class:"btn btn-success"
+  :javascript
+    $('#datetimepicker').datetimepicker({
+      format: 'dd/MM/yyyy hh:mm:ss',
+      language: 'pt-BR'
+    });
 
-    :javascript
-      $('.datepicker').datepicker({ 
-          dateFormat: "yy-mm-dd" }
-        );
+    $('.datepicker').datepicker({ 
+        dateFormat: "yy-mm-dd" }
+      );
